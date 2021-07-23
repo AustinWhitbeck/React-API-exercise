@@ -13,6 +13,9 @@ export function fetchAllQuotes(): Promise<Quotes[]> {
 
 export function fetchAllForecast(): Promise<WeatherForecast[]> {
     return axios.get(forecastApiUrl).then((response) => {
-        return response.data;
+        return response.data.properties.periods;
     })
 }
+
+
+console.log(fetchAllForecast());
